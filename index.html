@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling: Life System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <main id="app">
+        <header class="player-header">
+            <div class="profile-section">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Shadow" alt="Avatar">
+                </div>
+                <div class="player-meta">
+                    <h1 id="player-name">MONARCA</h1>
+                    <p class="rank-title">Rank E - Desperto</p>
+                </div>
+            </div>
+            <div class="level-container">
+                <span class="level-label">NÍVEL</span>
+                <span id="level-val">1</span>
+            </div>
+        </header>
+
+        <section class="xp-section">
+            <div class="xp-info">
+                <span>XP: <span id="current-xp">0</span> / <span id="next-level-xp">100</span></span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="xp-fill" class="progress-bar-fill"></div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card"><span>FOR</span> <b id="stat-for">10</b></div>
+            <div class="stat-card"><span>INT</span> <b id="stat-int">10</b></div>
+            <div class="stat-card"><span>RES</span> <b id="stat-res">10</b></div>
+            <div class="stat-card"><span>DIS</span> <b id="stat-dis">10</b></div>
+        </section>
+
+        <section class="quest-container">
+            <h2>MISSÕES ATIVAS</h2>
+            <div id="quest-list">
+                </div>
+        </section>
+    </main>
+
+    <div id="level-up-modal" class="modal hidden">
+        <div class="modal-content">
+            <h1 class="glitch">LEVEL UP!</h1>
+            <p>Seus limites foram superados.</p>
+            <button onclick="closeModal()">FECHAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
