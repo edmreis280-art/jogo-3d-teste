@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #050a0f;
+    --panel-color: rgba(10, 20, 30, 0.8);
+    --neon-blue: #00d4ff;
+    --neon-purple: #9d00ff;
+    --xp-green: #00ff88;
+    --text-color: #e0f2f1;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Efeito de Scanline no fundo */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid var(--neon-blue);
+    background: var(--panel-color);
+}
+
+.level-container {
+    text-align: center;
+    border: 2px solid var(--neon-blue);
+    padding: 5px 15px;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+#level-val { font-size: 2rem; font-weight: bold; color: var(--neon-blue); }
+
+.progress-bar-bg {
+    width: 100%;
+    height: 12px;
+    background: #1a1a1a;
+    margin-top: 5px;
+    border: 1px solid #333;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-blue), var(--xp-green));
+    box-shadow: 0 0 15px var(--xp-green);
+    transition: width 0.5s ease;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.stat-card {
+    background: rgba(0, 212, 255, 0.1);
+    border-left: 4px solid var(--neon-blue);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quest-card {
+    background: var(--panel-color);
+    margin: 10px 20px;
+    padding: 15px;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.quest-card:hover { border-color: var(--neon-blue); }
+
+button {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+button:hover { background: var(--neon-blue); color: #000; }
+
+.hidden { display: none; }
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.glitch {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    text-shadow: 2px 2px var(--neon-purple);
+}
